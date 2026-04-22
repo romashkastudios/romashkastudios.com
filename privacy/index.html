@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Romashka Studios</title>
+<meta name="description" content="Privacy Policy for Romashka Studios LLC and the Mindelu iOS application.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #1A1915;
+    --off-black: #2A2820;
+    --dark: #3A3830;
+    --mid: #7A7868;
+    --light: #A09E90;
+    --silver: #C8C4B8;
+    --ghost: #DDD9CE;
+    --pale: #EDE9E0;
+    --white: #F6F3EC;
+    --pure: #FBF9F4;
+    --cream: #F6F3EC;
+    --crayon-yellow: #E8C840;
+    --crayon-yellow-soft: #F2DC78;
+    --cerulean: #2A7AB5;
+    --cerulean-soft: #5A9FCC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Geist', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--black);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ─── NAV ─── */
+  nav { padding: 28px 0; }
+
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--black);
+  }
+
+  .logo-mark { width: 32px; height: 32px; }
+
+  .logo-text {
+    font-family: 'Instrument Serif', serif;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-contact {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mid);
+    text-decoration: none;
+    padding: 7px 18px;
+    border: 1px solid var(--ghost);
+    border-radius: 999px;
+    transition: all 0.2s ease;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-contact:hover {
+    border-color: var(--cerulean-soft);
+    color: var(--cerulean);
+  }
+
+  /* ─── SKETCH LINE ─── */
+  .sketch-line {
+    position: relative;
+    height: 8px;
+    overflow: visible;
+  }
+
+  .sketch-line svg {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 8px;
+  }
+
+  /* ─── POLICY CONTENT ─── */
+  .policy-header {
+    padding: 72px 0 48px;
+    text-align: center;
+    animation: fadeIn 0.8s ease both;
+  }
+
+  .policy-header h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(32px, 4.5vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+
+  .policy-header h1 em { font-style: italic; }
+
+  .policy-meta {
+    font-size: 14px;
+    color: var(--light);
+    line-height: 1.6;
+  }
+
+  .policy-body {
+    padding: 0 0 80px;
+    max-width: 680px;
+    margin: 0 auto;
+    animation: fadeIn 0.6s ease both;
+    animation-delay: 0.2s;
+  }
+
+  .policy-body h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    margin: 48px 0 16px;
+    color: var(--black);
+    position: relative;
+    display: inline-block;
+  }
+
+  .policy-body h2::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    height: 5px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='5'%3E%3Cpath d='M2 3 C 30 1, 60 4, 100 2.5 S 170 1, 198 3' stroke='%232A7AB5' fill='none' stroke-width='1.2' stroke-linecap='round' opacity='0.18'/%3E%3C/svg%3E") no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .policy-body h2:first-of-type {
+    margin-top: 32px;
+  }
+
+  .policy-body p {
+    font-size: 15px;
+    color: var(--mid);
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+
+  .policy-body strong {
+    color: var(--off-black);
+    font-weight: 500;
+  }
+
+  .policy-body ul {
+    margin: 8px 0 16px 0;
+    padding-left: 20px;
+    list-style: none;
+  }
+
+  .policy-body ul li {
+    font-size: 15px;
+    color: var(--mid);
+    line-height: 1.8;
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 16px;
+  }
+
+  .policy-body ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--cerulean-soft);
+    opacity: 0.5;
+  }
+
+  .policy-body a {
+    color: var(--cerulean);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(42, 122, 181, 0.2);
+    transition: border-color 0.2s;
+  }
+
+  .policy-body a:hover {
+    border-bottom-color: var(--cerulean);
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 14px;
+  }
+
+  .data-table th {
+    text-align: left;
+    font-weight: 500;
+    color: var(--off-black);
+    padding: 10px 16px 10px 0;
+    border-bottom: 1px solid var(--ghost);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .data-table td {
+    padding: 10px 16px 10px 0;
+    color: var(--mid);
+    border-bottom: 1px solid var(--pale);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  .data-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* ─── FOOTER ─── */
+  footer { padding: 48px 0 40px; }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-left svg { width: 24px; height: 24px; opacity: 0.6; }
+
+  .footer-legal {
+    font-size: 13px;
+    color: var(--light);
+    line-height: 1.7;
+  }
+
+  .footer-legal a {
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-legal a:hover { color: var(--cerulean); }
+
+  .footer-right { text-align: right; }
+
+  .footer-label {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--light);
+    margin-bottom: 6px;
+  }
+
+  .footer-right a {
+    font-size: 14px;
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .footer-right a:hover { color: var(--cerulean); }
+
+  .copyright {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: none;
+    text-align: center;
+    font-size: 12px;
+    color: var(--silver);
+    letter-spacing: 0.01em;
+    position: relative;
+  }
+
+  .copyright::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='2'%3E%3Cpath d='M0 1 Q 20 0.3, 40 1 T 80 1 T 120 1 T 160 1 T 200 1 T 240 1 T 280 1 T 320 1 T 360 1 T 400 1' stroke='%23C8C4B8' fill='none' stroke-width='0.7'/%3E%3C/svg%3E") repeat-x;
+    background-size: 400px 2px;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 680px) {
+    .policy-header { padding: 56px 0 36px; }
+    .policy-body { padding: 0 0 60px; }
+    .footer-inner { flex-direction: column; gap: 28px; }
+    .footer-right { text-align: left; }
+    .data-table { font-size: 13px; }
+    .data-table th, .data-table td { padding: 8px 10px 8px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── DAISY SYMBOL ─── -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol id="daisy" viewBox="0 0 100 100">
+      <g transform="translate(50 50)">
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.9"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.9" transform="rotate(45)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.9" transform="rotate(90)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.9" transform="rotate(135)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.9" transform="rotate(180)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.9" transform="rotate(225)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.9" transform="rotate(270)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.9" transform="rotate(315)"/>
+        <circle r="12" fill="#E8C840" opacity="0.55"/>
+        <circle r="10" fill="#F2DC78" opacity="0.3"/>
+        <circle r="12" fill="none" stroke="var(--black)" stroke-width="0.9"/>
+        <circle r="2" fill="#B8960A" opacity="0.25"/>
+        <circle cx="-4" cy="-3" r="1" fill="#B8960A" opacity="0.18"/>
+        <circle cx="4" cy="-2" r="1.2" fill="#B8960A" opacity="0.18"/>
+        <circle cx="-2" cy="4" r="0.9" fill="#B8960A" opacity="0.18"/>
+        <circle cx="3" cy="4" r="1.1" fill="#B8960A" opacity="0.18"/>
+      </g>
+    </symbol>
+
+    <filter id="pencil" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="container">
+    <a href="/" class="logo">
+      <svg class="logo-mark" width="32" height="32" viewBox="0 0 100 100"><use href="#daisy"/></svg>
+      <span class="logo-text">Romashka Studios</span>
+    </a>
+    <a href="mailto:solutions@romashkastudios.com" class="nav-contact">Contact</a>
+  </div>
+</nav>
+
+<div class="sketch-line">
+  <svg viewBox="0 0 1200 8" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 4 C 50 2, 100 5, 200 3.5 S 350 5, 500 4 S 650 2.5, 800 4 S 950 5.5, 1100 3.5 L 1200 4" 
+          stroke="#C8C4B8" fill="none" stroke-width="0.8" stroke-linecap="round" filter="url(#pencil)"/>
+  </svg>
+</div>
+
+<!-- ─── HEADER ─── -->
+<section class="policy-header">
+  <div class="container">
+    <h1>Privacy <em>Policy</em></h1>
+    <p class="policy-meta">
+      Romashka Studios LLC · Last updated April 17, 2026
+    </p>
+  </div>
+</section>
+
+<div class="sketch-line">
+  <svg viewBox="0 0 1200 8" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 4 C 80 5.5, 150 2, 300 4 S 500 5, 650 3.5 S 850 5.5, 1000 4 S 1120 2, 1200 4.5" 
+          stroke="#C8C4B8" fill="none" stroke-width="0.8" stroke-linecap="round" filter="url(#pencil)"/>
+  </svg>
+</div>
+
+<!-- ─── POLICY BODY ─── -->
+<div class="policy-body">
+  <div class="container">
+
+    <h2>Overview</h2>
+    <p>Romashka Studios LLC ("we," "us," or "our") operates the Mindelu mobile application (the "App"). This Privacy Policy explains what information we collect, how we use it, and the choices you have. We are committed to protecting your privacy and handling your data with care.</p>
+    <p>Mindelu is not a medical device and does not provide medical advice, diagnosis, or treatment. If you are in crisis, please contact the <strong>988 Suicide &amp; Crisis Lifeline</strong> (call or text 988).</p>
+
+    <h2>Information We Collect</h2>
+    <p>We collect the minimum information necessary to provide the App's features. Here is what we collect and why:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data type</th>
+          <th>Purpose</th>
+          <th>Linked to you</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Email address</td>
+          <td>Account creation and authentication</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Display name</td>
+          <td>Personalization within the App</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Mood entries</td>
+          <td>Mood tracking, trend analysis, AI insights</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Journal entries</td>
+          <td>Journaling feature, AI reflections</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Dream entries</td>
+          <td>Dream logging, AI interpretation</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Activity tags</td>
+          <td>Activity-mood correlation analysis</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>App preferences</td>
+          <td>Theme, reminder times, primary goal</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Usage analytics</td>
+          <td>Improving the App (see Analytics section)</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>We do <strong>not</strong> collect your precise location, contacts, photos, health data from HealthKit, or advertising identifiers.</p>
+
+    <h2>Voice Input</h2>
+    <p>Mindelu offers voice input for journaling and dream logging. Voice recognition is processed entirely on your device using Apple's Speech framework. Audio is not recorded, stored, or transmitted to our servers. Only the transcribed text — which you review and confirm — is saved as part of your entry.</p>
+
+    <h2>How We Use AI</h2>
+    <p>The App uses AI (powered by Anthropic's Claude API) to generate journal reflections, dream interpretations, and weekly mood reports. To provide these features, we send relevant entry content to Anthropic's API for processing. Specifically:</p>
+    <ul>
+      <li>A compressed summary of your recent entries (mood levels, journal themes, dream themes) is included as context so the AI can identify patterns.</li>
+      <li>The content of the specific entry you are requesting a reflection or interpretation for is sent.</li>
+      <li>Your email address and account identifiers are <strong>not</strong> sent to the AI provider.</li>
+    </ul>
+    <p>Anthropic does not use your data to train their models. AI-generated content (reflections, interpretations, reports) is stored in your account alongside the entries they relate to. You can delete this content at any time.</p>
+
+    <h2>Analytics</h2>
+    <p>We use PostHog to collect anonymous usage analytics — such as which features are used, session frequency, and general app performance. This data is not linked to your identity and cannot be used to identify you. We use it solely to understand how the App is used and to improve the experience.</p>
+    <p>We do <strong>not</strong> use any third-party advertising SDKs, and we do not share data with advertising networks or data brokers.</p>
+
+    <h2>Data Storage and Security</h2>
+    <p>Your data is stored on Supabase, a cloud database platform with servers in the United States. All data is transmitted over encrypted connections (TLS). Access to your data is protected by Row-Level Security — meaning your account can only access its own data at the database level.</p>
+    <p>We follow industry-standard practices to protect your information, but no method of electronic storage or transmission is completely secure. We cannot guarantee absolute security.</p>
+
+    <h2>Third-Party Services</h2>
+    <p>The App integrates with the following third-party services, each of which has its own privacy policy:</p>
+    <ul>
+      <li><strong>Supabase</strong> — authentication and data storage (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">privacy policy</a>)</li>
+      <li><strong>Anthropic (Claude API)</strong> — AI-powered reflections and interpretations (<a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">privacy policy</a>)</li>
+      <li><strong>PostHog</strong> — anonymous usage analytics (<a href="https://posthog.com/privacy" target="_blank" rel="noopener">privacy policy</a>)</li>
+      <li><strong>Apple (StoreKit, Speech, APNs)</strong> — subscriptions, on-device voice recognition, push notifications (<a href="https://www.apple.com/privacy/" target="_blank" rel="noopener">privacy policy</a>)</li>
+    </ul>
+    <p>These services provide the same or equivalent protection of your data as described in this policy. We do not share your data with any other third parties.</p>
+
+    <h2>Subscriptions and Payments</h2>
+    <p>Premium subscriptions are processed entirely through Apple's App Store using StoreKit. We do not collect, process, or store your payment information (credit card numbers, billing address, etc.). Subscription management, billing, and refunds are handled by Apple. Please refer to <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a> for details on payment processing.</p>
+
+    <h2>Data Retention</h2>
+    <p>We retain your data for as long as your account is active. If you delete your account, all associated data — including mood entries, journal entries, dream entries, AI-generated content, and preferences — will be permanently deleted from our servers within 30 days. Residual copies in encrypted backups may persist for up to 90 days before being overwritten.</p>
+
+    <h2>Your Rights and Choices</h2>
+    <p>You have the following rights regarding your data:</p>
+    <ul>
+      <li><strong>Access:</strong> You can view all your data within the App at any time.</li>
+      <li><strong>Export:</strong> Premium subscribers can export their data as a PDF from the Settings screen.</li>
+      <li><strong>Deletion:</strong> You can delete individual entries within the App or request complete account deletion. To delete your account and all associated data, go to Settings &gt; Account &gt; Delete Account, or email us at <a href="mailto:privacy@romashkastudios.com">privacy@romashkastudios.com</a>.</li>
+      <li><strong>Correction:</strong> You can edit your entries and profile information within the App.</li>
+      <li><strong>Withdraw consent:</strong> You can stop using AI features at any time. You can disable push notifications in your device settings. You can delete your account entirely.</li>
+    </ul>
+    <p>If you are located in the European Economic Area (EEA), you have additional rights under the GDPR, including the right to data portability and the right to lodge a complaint with a supervisory authority. If you are a California resident, you have rights under the CCPA, including the right to know what personal information is collected and the right to opt out of the sale of personal information — though we do not sell personal information.</p>
+
+    <h2>Children's Privacy</h2>
+    <p>Mindelu is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If we learn that we have collected personal information from a child under 13, we will promptly delete that information. If you believe a child under 13 has provided us with personal information, please contact us at <a href="mailto:privacy@romashkastudios.com">privacy@romashkastudios.com</a>.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we make changes, we will update the "Last updated" date at the top of this page and, where appropriate, notify you within the App. We encourage you to review this policy periodically.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have questions about this Privacy Policy or your data, please contact us:</p>
+    <p>
+      Romashka Studios LLC<br>
+      Connecticut, United States<br>
+      <a href="mailto:privacy@romashkastudios.com">privacy@romashkastudios.com</a>
+    </p>
+
+  </div>
+</div>
+
+<div class="sketch-line">
+  <svg viewBox="0 0 1200 8" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 3.5 C 60 5, 180 2, 350 4.5 S 550 2.5, 700 4 S 900 5.5, 1050 3 L 1200 4" 
+          stroke="#C8C4B8" fill="none" stroke-width="0.8" stroke-linecap="round" filter="url(#pencil)"/>
+  </svg>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-left" style="margin-bottom:12px">
+          <svg width="24" height="24" viewBox="0 0 100 100" style="opacity:0.6"><use href="#daisy"/></svg>
+          <span style="font-family:'Instrument Serif',serif;font-size:16px;">Romashka Studios</span>
+        </div>
+        <div class="footer-legal">
+          Romashka Studios LLC<br>
+          Connecticut, United States<br><br>
+          <a href="/privacy">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-label">Contact</div>
+        <a href="mailto:solutions@romashkastudios.com">solutions@romashkastudios.com</a>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2026 Romashka Studios LLC
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

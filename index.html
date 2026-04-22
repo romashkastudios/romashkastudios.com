@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Romashka Studios — iOS Apps & AI Solutions</title>
+<meta name="description" content="Romashka Studios LLC is a Connecticut-based software studio specializing in iOS applications and AI-powered solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #1A1915;
+    --off-black: #2A2820;
+    --dark: #3A3830;
+    --mid: #7A7868;
+    --light: #A09E90;
+    --silver: #C8C4B8;
+    --ghost: #DDD9CE;
+    --pale: #EDE9E0;
+    --white: #F6F3EC;
+    --pure: #FBF9F4;
+    --cream: #F6F3EC;
+
+    /* Crayon colors */
+    --crayon-yellow: #E8C840;
+    --crayon-yellow-soft: #F2DC78;
+    --cerulean: #2A7AB5;
+    --cerulean-soft: #5A9FCC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Geist', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--black);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ─── NAV ─── */
+  nav { padding: 28px 0; }
+
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--black);
+  }
+
+  .logo-mark { width: 32px; height: 32px; }
+
+  .logo-text {
+    font-family: 'Instrument Serif', serif;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-contact {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mid);
+    text-decoration: none;
+    padding: 7px 18px;
+    border: 1px solid var(--ghost);
+    border-radius: 999px;
+    transition: all 0.2s ease;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-contact:hover {
+    border-color: var(--cerulean-soft);
+    color: var(--cerulean);
+  }
+
+  /* ─── SKETCH LINES ─── */
+  .sketch-line {
+    position: relative;
+    height: 8px;
+    overflow: visible;
+  }
+
+  .sketch-line svg {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 8px;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 100px 0 108px;
+    text-align: center;
+    animation: fadeIn 0.8s ease both;
+    position: relative;
+  }
+
+  .hero-daisy {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 44px;
+  }
+
+  .hero h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(38px, 5.5vw, 56px);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    font-weight: 400;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em { font-style: italic; }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--mid);
+    max-width: 440px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  /* ─── SKETCH DECORATIONS ─── */
+  .sketch-deco {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.16;
+  }
+
+  .hero-sketch-left {
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 140px;
+    height: 200px;
+  }
+
+  .hero-sketch-right {
+    right: -20px;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 180px;
+  }
+
+  /* ─── ABOUT ─── */
+  .about {
+    padding: 72px 0 80px;
+    position: relative;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+
+  .about-left h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  .about-left p {
+    font-size: 15px;
+    color: var(--mid);
+    line-height: 1.75;
+  }
+
+  .services {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .service {
+    padding: 20px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    position: relative;
+  }
+
+  .service::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='2'%3E%3Cpath d='M0 1 Q 20 0.2, 40 1 T 80 1 T 120 1 T 160 1 T 200 1 T 240 1 T 280 1 T 320 1 T 360 1 T 400 1' stroke='%23C8C4B8' fill='none' stroke-width='0.8'/%3E%3C/svg%3E") repeat-x;
+    background-size: 400px 2px;
+  }
+
+  .service:first-child::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='2'%3E%3Cpath d='M0 1 Q 20 0.4, 40 1 T 80 1 T 120 1 T 160 1 T 200 1 T 240 1 T 280 1 T 320 1 T 360 1 T 400 1' stroke='%23C8C4B8' fill='none' stroke-width='0.8'/%3E%3C/svg%3E") repeat-x;
+    background-size: 400px 2px;
+  }
+
+  .service-num {
+    font-size: 11px;
+    color: var(--cerulean-soft);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    min-width: 20px;
+  }
+
+  .service-content h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 3px;
+    color: var(--off-black);
+  }
+
+  .service-content p {
+    font-size: 13.5px;
+    color: var(--light);
+    line-height: 1.55;
+  }
+
+  .service-arrow {
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .service:hover .service-arrow {
+    opacity: 0.45;
+    transform: translateY(-50%) translateX(3px);
+  }
+
+  /* ─── FOOTER ─── */
+  footer { padding: 48px 0 40px; }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-left svg { width: 24px; height: 24px; opacity: 0.6; }
+
+  .footer-legal {
+    font-size: 13px;
+    color: var(--light);
+    line-height: 1.7;
+  }
+
+  .footer-legal a {
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-legal a:hover { color: var(--cerulean); }
+
+  .footer-right { text-align: right; }
+
+  .footer-label {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--light);
+    margin-bottom: 6px;
+  }
+
+  .footer-right a {
+    font-size: 14px;
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .footer-right a:hover { color: var(--cerulean); }
+
+  .copyright {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: none;
+    text-align: center;
+    font-size: 12px;
+    color: var(--silver);
+    letter-spacing: 0.01em;
+    position: relative;
+  }
+
+  .copyright::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='2'%3E%3Cpath d='M0 1 Q 20 0.3, 40 1 T 80 1 T 120 1 T 160 1 T 200 1 T 240 1 T 280 1 T 320 1 T 360 1 T 400 1' stroke='%23C8C4B8' fill='none' stroke-width='0.7'/%3E%3C/svg%3E") repeat-x;
+    background-size: 400px 2px;
+  }
+
+  /* ─── UNDERLINE SKETCH — cerulean crayon ─── */
+  .sketch-underline {
+    position: relative;
+    display: inline;
+  }
+
+  .sketch-underline::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    height: 6px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='6'%3E%3Cpath d='M2 4 C 30 1, 60 5, 100 3 S 170 1, 198 3' stroke='%232A7AB5' fill='none' stroke-width='1.5' stroke-linecap='round' opacity='0.25'/%3E%3C/svg%3E") no-repeat;
+    background-size: 100% 100%;
+  }
+
+  /* ─── SKETCH CIRCLE ─── */
+  .hero-daisy-wrap {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 44px;
+  }
+
+  .sketch-circle {
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    width: calc(100% + 32px);
+    height: calc(100% + 32px);
+    pointer-events: none;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes drawLine {
+    from { stroke-dashoffset: 1000; }
+    to { stroke-dashoffset: 0; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .sketch-draw {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawLine 2s ease forwards;
+  }
+
+  /* ─── MARGIN NOTES ─── */
+  .margin-note {
+    position: absolute;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--cerulean-soft);
+    transform: rotate(-3deg);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease 0.8s;
+  }
+
+  .margin-note.visible { opacity: 0.5; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 680px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .hero { padding: 72px 0 80px; }
+    .about { padding: 56px 0 64px; }
+    .footer-inner { flex-direction: column; gap: 28px; }
+    .footer-right { text-align: left; }
+    .hero-sketch-left, .hero-sketch-right, .corner-sketch, .margin-note { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── DAISY SYMBOLS ─── -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0">
+  <defs>
+    <!-- Nav/footer daisy — subtle yellow center -->
+    <symbol id="daisy" viewBox="0 0 100 100">
+      <g transform="translate(50 50)">
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.9"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.9" transform="rotate(45)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.9" transform="rotate(90)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.9" transform="rotate(135)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.9" transform="rotate(180)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.9" transform="rotate(225)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.9" transform="rotate(270)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.9" transform="rotate(315)"/>
+        <circle r="12" fill="#E8C840" opacity="0.55"/>
+        <circle r="10" fill="#F2DC78" opacity="0.3"/>
+        <circle r="12" fill="none" stroke="var(--black)" stroke-width="0.9"/>
+        <circle r="2" fill="#B8960A" opacity="0.25"/>
+        <circle cx="-4" cy="-3" r="1" fill="#B8960A" opacity="0.18"/>
+        <circle cx="4" cy="-2" r="1.2" fill="#B8960A" opacity="0.18"/>
+        <circle cx="-2" cy="4" r="0.9" fill="#B8960A" opacity="0.18"/>
+        <circle cx="3" cy="4" r="1.1" fill="#B8960A" opacity="0.18"/>
+      </g>
+    </symbol>
+
+    <!-- Hero daisy — richer yellow center -->
+    <symbol id="daisy-hero" viewBox="0 0 100 100">
+      <g transform="translate(50 50)">
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.8"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.8" transform="rotate(45)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.8" transform="rotate(90)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.8" transform="rotate(135)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.8" transform="rotate(180)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.8" transform="rotate(225)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.8" transform="rotate(270)"/>
+        <ellipse cx="0" cy="-28" rx="8" ry="20" fill="none" stroke="var(--black)" stroke-width="0.8" transform="rotate(315)"/>
+        <circle r="12" fill="#E8C840" opacity="0.7"/>
+        <circle r="9" fill="#F2DC78" opacity="0.4"/>
+        <circle r="5" fill="#E8C840" opacity="0.2"/>
+        <circle r="12" fill="none" stroke="var(--black)" stroke-width="0.8"/>
+        <circle r="2.5" fill="#B8960A" opacity="0.3"/>
+        <circle cx="-4" cy="-3" r="1.2" fill="#B8960A" opacity="0.2"/>
+        <circle cx="5" cy="-2" r="1.4" fill="#B8960A" opacity="0.2"/>
+        <circle cx="-3" cy="5" r="1.1" fill="#B8960A" opacity="0.2"/>
+        <circle cx="4" cy="4" r="1.3" fill="#B8960A" opacity="0.2"/>
+      </g>
+    </symbol>
+
+    <!-- Filters -->
+    <filter id="pencil" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <filter id="pencil-rough" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="4" seed="5" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="container">
+    <a href="/" class="logo">
+      <svg class="logo-mark" width="32" height="32" viewBox="0 0 100 100"><use href="#daisy"/></svg>
+      <span class="logo-text">Romashka Studios</span>
+    </a>
+    <a href="mailto:solutions@romashkastudios.com" class="nav-contact">Contact</a>
+  </div>
+</nav>
+
+<div class="sketch-line">
+  <svg viewBox="0 0 1200 8" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 4 C 50 2, 100 5, 200 3.5 S 350 5, 500 4 S 650 2.5, 800 4 S 950 5.5, 1100 3.5 L 1200 4" 
+          stroke="#C8C4B8" fill="none" stroke-width="0.8" stroke-linecap="round" filter="url(#pencil)"/>
+  </svg>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="container" style="position:relative;">
+    
+    <!-- Botanical scribbles — cerulean with yellow dot accents -->
+    <svg class="sketch-deco hero-sketch-left" viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg">
+      <path d="M70 190 C 68 160, 65 140, 70 110 C 72 95, 60 80, 55 65 M70 110 C 78 95, 90 85, 95 70" 
+            stroke="var(--cerulean)" fill="none" stroke-width="1" stroke-linecap="round" filter="url(#pencil)"/>
+      <ellipse cx="50" cy="58" rx="12" ry="18" fill="none" stroke="var(--cerulean)" stroke-width="0.7" transform="rotate(-15 50 58)" filter="url(#pencil)"/>
+      <ellipse cx="65" cy="50" rx="10" ry="16" fill="none" stroke="var(--cerulean)" stroke-width="0.7" transform="rotate(10 65 50)" filter="url(#pencil)"/>
+      <ellipse cx="100" cy="62" rx="11" ry="16" fill="none" stroke="var(--cerulean)" stroke-width="0.7" transform="rotate(20 100 62)" filter="url(#pencil)"/>
+      <path d="M70 150 C 50 145, 35 130, 30 115" stroke="var(--cerulean)" fill="none" stroke-width="0.7" stroke-linecap="round" filter="url(#pencil)"/>
+      <ellipse cx="25" cy="108" rx="9" ry="14" fill="none" stroke="var(--cerulean)" stroke-width="0.6" transform="rotate(-25 25 108)" filter="url(#pencil)"/>
+      <circle cx="50" cy="58" r="3" fill="#E8C840" opacity="0.35" filter="url(#pencil)"/>
+      <circle cx="100" cy="62" r="2.5" fill="#E8C840" opacity="0.3" filter="url(#pencil)"/>
+      <circle cx="25" cy="108" r="2" fill="#E8C840" opacity="0.25" filter="url(#pencil)"/>
+    </svg>
+
+    <svg class="sketch-deco hero-sketch-right" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg">
+      <path d="M60 170 C 58 145, 62 120, 55 90 C 50 70, 58 55, 60 40" 
+            stroke="var(--cerulean)" fill="none" stroke-width="0.9" stroke-linecap="round" filter="url(#pencil)"/>
+      <ellipse cx="48" cy="35" rx="10" ry="15" fill="none" stroke="var(--cerulean)" stroke-width="0.6" transform="rotate(-10 48 35)" filter="url(#pencil)"/>
+      <ellipse cx="72" cy="38" rx="9" ry="14" fill="none" stroke="var(--cerulean)" stroke-width="0.6" transform="rotate(15 72 38)" filter="url(#pencil)"/>
+      <path d="M55 120 C 75 110, 85 95, 90 78" stroke="var(--cerulean)" fill="none" stroke-width="0.6" stroke-linecap="round" filter="url(#pencil)"/>
+      <circle cx="92" cy="72" r="8" fill="none" stroke="var(--cerulean)" stroke-width="0.5" filter="url(#pencil)"/>
+      <circle cx="48" cy="35" r="2.5" fill="#E8C840" opacity="0.3" filter="url(#pencil)"/>
+      <circle cx="72" cy="38" r="2" fill="#E8C840" opacity="0.25" filter="url(#pencil)"/>
+    </svg>
+
+    <div class="hero-daisy-wrap">
+      <svg class="hero-daisy" width="72" height="72" viewBox="0 0 100 100"><use href="#daisy-hero"/></svg>
+      <svg class="sketch-circle" viewBox="0 0 104 104" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="52" cy="52" rx="48" ry="46" fill="none" stroke="var(--cerulean)" stroke-width="0.7" opacity="0.15" 
+                 transform="rotate(-4 52 52)" filter="url(#pencil-rough)" class="sketch-draw"/>
+      </svg>
+    </div>
+
+    <h1>Thoughtful software,<br><em class="sketch-underline">carefully made</em></h1>
+    <p class="hero-sub">
+      An independent studio building iOS applications and AI-powered solutions.
+    </p>
+  </div>
+</section>
+
+<div class="sketch-line">
+  <svg viewBox="0 0 1200 8" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 4 C 80 5.5, 150 2, 300 4 S 500 5, 650 3.5 S 850 5.5, 1000 4 S 1120 2, 1200 4.5" 
+          stroke="#C8C4B8" fill="none" stroke-width="0.8" stroke-linecap="round" filter="url(#pencil)"/>
+  </svg>
+</div>
+
+<!-- ─── ABOUT ─── -->
+<section class="about">
+  <div class="container" style="position:relative;">
+
+    <span class="margin-note reveal" style="left:-50px; top:20px;">what we do ↗</span>
+
+    <div class="about-grid">
+      <div class="about-left reveal">
+        <h2>We build things that<br>feel <span class="sketch-underline">considered</span></h2>
+        <p>
+          Romashka Studios LLC is a software company focused on native mobile applications and intelligent AI integrations. We care about the details — the architecture underneath, the interactions on the surface, and everything between.
+        </p>
+      </div>
+      <div class="services reveal">
+        <div class="service">
+          <span class="service-num">01</span>
+          <div class="service-content">
+            <h3>iOS Development</h3>
+            <p>Native SwiftUI applications built for performance and beautiful design</p>
+          </div>
+          <svg class="service-arrow" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 8 L 18 8 M 14 3 L 20 8 L 14 13" stroke="var(--cerulean)" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#pencil)"/>
+          </svg>
+        </div>
+        <div class="service">
+          <span class="service-num">02</span>
+          <div class="service-content">
+            <h3>AI Integration</h3>
+            <p>Thoughtful AI features that are genuinely useful, not gimmicks</p>
+          </div>
+          <svg class="service-arrow" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 8 L 18 8 M 14 3 L 20 8 L 14 13" stroke="var(--cerulean)" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#pencil)"/>
+          </svg>
+        </div>
+        <div class="service">
+          <span class="service-num">03</span>
+          <div class="service-content">
+            <h3>Product Design</h3>
+            <p>End-to-end design with a focus on user wellbeing and craft</p>
+          </div>
+          <svg class="service-arrow" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 8 L 18 8 M 14 3 L 20 8 L 14 13" stroke="var(--cerulean)" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#pencil)"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sketch-line">
+  <svg viewBox="0 0 1200 8" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 3.5 C 60 5, 180 2, 350 4.5 S 550 2.5, 700 4 S 900 5.5, 1050 3 L 1200 4" 
+          stroke="#C8C4B8" fill="none" stroke-width="0.8" stroke-linecap="round" filter="url(#pencil)"/>
+  </svg>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-left" style="margin-bottom:12px">
+          <svg width="24" height="24" viewBox="0 0 100 100" style="opacity:0.6"><use href="#daisy"/></svg>
+          <span style="font-family:'Instrument Serif',serif;font-size:16px;">Romashka Studios</span>
+        </div>
+        <div class="footer-legal">
+          Romashka Studios LLC<br>
+          Connecticut, United States<br><br>
+          <a href="/privacy">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-label">Contact</div>
+        <a href="mailto:solutions@romashkastudios.com">solutions@romashkastudios.com</a>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2026 Romashka Studios LLC
+    </div>
+  </div>
+</footer>
+
+<!-- Background scatter daisies -->
+<svg style="position:fixed;top:15%;right:5%;width:40px;height:40px;opacity:0.05;pointer-events:none;z-index:-1" viewBox="0 0 100 100"><use href="#daisy"/></svg>
+<svg style="position:fixed;bottom:20%;left:4%;width:28px;height:28px;opacity:0.04;pointer-events:none;z-index:-1;transform:rotate(22deg)" viewBox="0 0 100 100"><use href="#daisy"/></svg>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
